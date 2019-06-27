@@ -1,0 +1,65 @@
+# ADN default configs
+batch_size: 4
+num_workers: 4
+use_gpu: True
+checkpoints_dir: runs/ # a folder that records all the training and testing results
+last_epoch: last
+num_epochs: 50
+print_step: 1
+window_size: 100 # the moving average window size for training and testing stats
+visualize_step: 100 # number of batch iters to visualize ADN's outputs
+save_step: 10 # number of epochs to snapshot the currently trained model
+visual_window: [0.0, 1.0] # the pixel value window for CT image visualization
+dataset:
+  dataset_type: spineweb
+  deep_lesion:
+    dataset_dir: data/deep_lesion/train
+    blacklist: 'data/deep_lesion/blacklist.json' # a list of deep lesion images containing clinical metal implants
+    normalize: True
+    partial_holdout: 0.5 # partially hold out some artifact-free images to create an unpaired senario
+    random_mask: True # randomly choose a metal mask
+    random_flip: True
+    load_mask: False # load metal mask which will be used during testing phase for evaluation
+  spineweb:
+    a_dir: data/spineweb/train/artifact
+    b_dir: data/spineweb/train/no_artifact
+    random_flip: True
+    a_range: [-1000.0, 2000.0]
+    b_range: [-1000.0, 2000.0]
+model:
+  g_type: adn
+  d_type: nlayer
+  adn:
+    input_ch: 1
+    base_ch: 64
+    num_down: 2 # number of downsampling (as well as upsampling) blocks
+    num_residual: 4 # number of residual blocks
+    num_sides: 3 # number of artifact encoding layers
+    down_norm: instance
+    res_norm: instance
+    up_norm: layer
+    fuse: True # if specified, fuse the artifact features with decoder features
+    shared_decoder: False # if specified, artifact and non-artifact decoders are shared
+  nlayer:
+    input_nc: 1
+    ndf: 64
+    n_layers: 2
+    norm_layer: instance
+learn:
+  lr: 1.e-4
+  beta1: 0.5 # params for Adam optim
+  beta2: 0.999 # params for Adam optim
+  weight_decay: 1.e-4
+  gamma: 0.5 # learning rate decay
+  step_size: 1.e+5 # means no learning rate decay
+loss:
+  gt_art: True # use inputs instead of ADN's recon outputs for artifact consistency loss
+  wgts: # loss weights. first element: loss type, second element: weight of the loss
+    ll: [l1, 20.0] # recon loss (low)
+    lh: [l1, 0.0] # set this to nonzero to train for paired data
+    hh: [l1, 20.0] # recon loss (high)
+    lhl: [l1, 0.0] # self-artifact synthesis loss
+    hlh: [l1, 20.0] # self-reduction
+    art: [l1, 20.0] # artifact consistency loss
+    gh: [gh, 1.0] # GAN loss for high
+    gl: [gl, 1.0] # GAN loss for low

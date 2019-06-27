@@ -1,0 +1,23 @@
+# ADN run configs. Any settings added to this file will override the default configs
+spineweb:
+  train:
+    batch_size: 2
+    dataset_type: spineweb
+  test:
+    batch_size: 8
+    dataset_type: spineweb
+    a_dir: data/spineweb/test/artifact
+    b_dir: data/spineweb/test/no_artifact
+    random_flip: False
+deep_lesion:
+  train:
+    batch_size: 2
+    dataset_type: deep_lesion
+  test:
+    batch_size: 8
+    dataset_type: deep_lesion
+    dataset_dir: data/deep_lesion/test
+    partial_holdout: 0.0
+    random_mask: False
+    random_flip: False
+    load_mask: True

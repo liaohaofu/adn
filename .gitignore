@@ -1,0 +1,13 @@
+data/deep_lesion/*
+!data/deep_lesion/metal_masks/
+!data/deep_lesion/blacklist.json
+!data/deep_lesion/image_list.txt
+data/spineweb/
+prepare_samples.py
+samples/
+results/
+runs/*/
+__pycache__
+*.m~
+*.swp
+

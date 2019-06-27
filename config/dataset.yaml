@@ -1,0 +1,27 @@
+deep_lesion:
+  raw_dir: data/deep_lesion/raw
+  dataset_dir: data/deep_lesion
+  data_list: data/deep_lesion/image_list.txt
+  mar_dir: data/deep_lesion/metal_masks
+  scale: 0.5
+  CTpara:
+    imPixNum: 256
+    angSize: 0.1
+    angNum: 320
+    SOD: 1075
+    imPixScale: '512 / 256 * 0.03'
+    train_indices: (0:3999) * 10 + 1
+    val_indices: (0:199) * 10 + 45000
+    val_mask_indices: [1,2,20,30,36,43,63,64,98,100]
+    train_mask_indices: setdiff(1:100, [1,2,20,30,36,43,63,64,98,100])
+    sinogram_size_x: 320
+    sinogram_size_y: 197
+    window: '[-175, 275] / 1000 * 0.192 + 0.192'
+spineweb:
+  raw_dir: data/spineweb/raw # path to the original (unzipped) spineweb data
+  dataset_dir: data/spineweb # path to the prepared spineweb data
+  max_hu: [2000, 2500] # thresholds of the non-metal/metal HU values
+  connected_area: 400 # the size of connected metal area
+  image_size: 256 # output image size
+  thumbnail_size: 96 # thumbail image size (thumbnail images provide an overview of a volume)
+  num_tests: 200 # min number of images for testing
