@@ -38,18 +38,18 @@ This repository is tested under the following system settings:
 - [x] Add a list of dependencies
 - [x] Add a docker file
 - [x] Push the repo to Github
+- [x] Add repo into paper
 - [ ] Prepare google drive for trained models
 - [ ] Add sample images
 - [ ] Test this repo from scratch
 - [ ] Finish README file
-- [ ] Add repo into paper
 - [ ] Review the repo and publish
 
-## Getting Started
+## Install
 
-### Install
+### Local
 
-#### Local
+For most of the users, you may consider install ADN locally on your machine with the following steps.
 
 - Clone this repository from Github
 
@@ -65,21 +65,35 @@ git clone https://github.com/liaohaofu/adn.git
 pip install -r requirements.txt
 ```
 
-#### Docker
+### Docker
+
+For Docker users, we provide a pre-built docker image as well as a Dockerfile.
 
 - Install [docker-ce](https://docs.docker.com/install/) and [nvidia-docker](https://github.com/NVIDIA/nvidia-docker).
+- Pull the ADN docker from Docker Hub. This will install ADN as well as its dependencies automatically.
+
+```cmd
+docker pull liaohaofu/adn
+```
+
 - [Optional] If you want a customized version of ADN docker, you may modify the docker file at `docker/Dockerfile` and then build a docker image.
 
 ```cmd
 cd docker/
-docker build -t adn .
+docker build -t liaohaofu/adn .
 ```
 
-### Datasets
+- Run the ADN docker.
+
+```cmd
+docker run -it --runtime=nvidia liaohaofu/adn
+```
+
+## Datasets
 
 Two publicly available datasets (DeepLesion and Spineweb) are supported.
 
-#### DeepLesion
+### DeepLesion
 
 - Download the [DeepLesion dataset](https://nihcc.app.box.com/v/DeepLesion). We use the first 9 *.zip* files (Images_png_01.zip to Images_png_09.zip) in our experiments. You may use the `batch_download_zips.py` provided by DeepLesion to batch download the *.zip* files at once.
 - Extract the downloaded *.zip* files. The extracted images should be located under `path_to_DeepLesion/Images_png`.
@@ -95,7 +109,7 @@ ln -s path_to_DeepLesion/Images_png data/deep_lesion/raw
 >> prepare_deep_lesion
 ```
 
-#### Spineweb
+### Spineweb
 
 - Download the [Spineweb dataset](https://imperialcollegelondon.app.box.com/s/erhcm28aablpy1725lt93xh6pk31ply1).
 - Extract the *spine-\*.zip* files. The extracted files should be located under `path_to_Spineweb/spine-*`.
@@ -112,7 +126,7 @@ ln -s path_to_Spineweb/ data/spineweb/raw
 python prepare_spineweb.py
 ```
 
-### Demo
+## Demo
 
 - We provide a demo code to demonstrate the effectiveness of ADN. The input samples images are located at `samples/` and the outputs of the demo can be found at `results/`. To run the demo,
 
@@ -130,7 +144,7 @@ python demo.py spineweb
   mv path_to_Spineweb_model runs/spineweb/spineweb_29.pt
   ```
 
-### Train and Test
+## Train and Test
 
 - Configure the training and testing. We use a two-stage configuration for ADN, one for the default settings and the other for the run settings.
   - The default settings of ADN can be found at `config/adn.yaml` which is not subject to be changed. When users do not provide the values for a specific setting, the default setting in this file will be used.

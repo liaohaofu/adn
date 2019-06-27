@@ -4,3 +4,4 @@ scipy>=1.1.0
 SimpleITK>=1.2.0
 torch>=1.0.0
 torchvision>=0.2.1
+googledrivedownloader>=0.4
