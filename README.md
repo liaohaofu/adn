@@ -1,4 +1,4 @@
-# ADN: Artifact Disentanglement Network for Unsupervised Medical Image Enhancement
+# [ADN: Artifact Disentanglement Network for Unsupervised Medical Image Enhancement](https://arxiv.org/pdf/1906.01806.pdf)
 
 By [Haofu Liao](http://www.liaohaofu.com) (liaohaofu@gmail.com), Spring, 2019
 
@@ -7,7 +7,7 @@ By [Haofu Liao](http://www.liaohaofu.com) (liaohaofu@gmail.com), Spring, 2019
 If you use this code for your research, please cite our paper.
 
 ```latex
-@inproceedings{ADN2019,
+@inproceedings{adn2019_miccai,
   title={Artifact Disentanglement Network for Unsupervised Metal Artifact Reduction},
   author={Haofu Liao, Wei-An Lin, Jianbo Yuan, S. Kevin Zhou, Jiebo Luo},
   booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
@@ -15,7 +15,7 @@ If you use this code for your research, please cite our paper.
 }
 ```
 
-## Requirements
+## Prerequisites
 
 This repository is tested under the following system settings:
 
@@ -24,27 +24,6 @@ This repository is tested under the following system settings:
 - Pytorch 1.0.0 or above
 - CUDA 9.0 or above
 - Matlab R2018b
-
-## TODO
-
-- [x] Rename all enc3 to adn
-- [x] Remove unnecessary functions/classes/options
-- [x] Add DeepLesion and Spineweb dataset
-- [x] Fix the tqdm display issue (more display info and first display bug)
-- [x] Change default options for ADN
-- [x] Add a demo that generate samples
-- [x] Add license
-- [x] Add some comments to the source code
-- [x] Add a list of dependencies
-- [x] Add a docker file
-- [x] Push the repo to Github
-- [x] Add repo into paper
-- [x] Prepare google drive for trained models
-- [x] Add sample images
-- [ ] Finish README file
-- [ ] Test this repo from scratch
-- [ ] Review the repo and publish
-- [ ] Add this repo to homepage
 
 ## Install
 
@@ -59,7 +38,7 @@ git clone https://github.com/liaohaofu/adn.git
 ```
 
 - Install [Pytorch](https://pytorch.org/get-started/locally/) and [Anaconda](https://www.anaconda.com/distribution/#download-section)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html)
-  - Anaconda/Miniconda installation is optional. If not installed, you may install some dependent python packages manually.
+  - Anaconda/Miniconda installation is optional. If not installed, you may have to install some dependent python packages manually.
 - Install Python dependencies.
 
 ```cmd
@@ -71,20 +50,20 @@ pip install -r requirements.txt
 For Docker users, we provide a pre-built docker image as well as a Dockerfile.
 
 - Install [docker-ce](https://docs.docker.com/install/) and [nvidia-docker](https://github.com/NVIDIA/nvidia-docker).
-- Pull the ADN docker from Docker Hub. This will install ADN as well as its dependencies automatically.
+- Pull the ADN docker image from Docker Hub. This will install ADN as well as its dependencies automatically.
 
 ```cmd
 docker pull liaohaofu/adn
 ```
 
-- **[Optional]** If you want a customized version of ADN docker, you may modify the docker file at `docker/Dockerfile` and then build a docker image.
+- **[Optional]** If you want a customized version of ADN docker image, you may modify the docker file at `docker/Dockerfile` and then build a docker image.
 
 ```cmd
 cd docker/
 docker build -t liaohaofu/adn .
 ```
 
-- Run the ADN docker.
+- Run the ADN docker image.
 
 ```cmd
 docker run -it --runtime=nvidia liaohaofu/adn
@@ -137,8 +116,8 @@ python demo.py spineweb
 ```
 
 - **[Optional]** By default, the demo code will download pretrained models from goole drive automatically. If the downloading fails, you may download them from google drive manually.
-  - Download pretrained models for [DeepLesion](https://drive.google.com/open?id=1NqZtEDGMNemy5mWyzTU-6vIAVIk_Ht-N) and [Spineweb](https://drive.google.com/open?id=10TpfN2ncKoYo2Qv_cEix0EdvBrtWoo3i)
-  - Move the downloaded models to `runs/`
+  - Download pretrained models for [DeepLesion](https://drive.google.com/open?id=1NqZtEDGMNemy5mWyzTU-6vIAVIk_Ht-N) and [Spineweb](https://drive.google.com/open?id=10TpfN2ncKoYo2Qv_cEix0EdvBrtWoo3i).
+  - Move the downloaded models to `runs/`.
 
   ```cmd
   mv path_to_DeepLesion_model runs/deep_lesion/deep_lesion_49.pt
