@@ -37,14 +37,13 @@ This repository is tested under the following system settings:
 - [x] Add some comments to the source code
 - [x] Add a list of dependencies
 - [x] Add a docker file
-- [ ] Retrain the model with 3 sides
+- [x] Push the repo to Github
 - [ ] Prepare google drive for trained models
 - [ ] Add sample images
 - [ ] Test this repo from scratch
-- [ ] Finish Readme file
-- [ ] Push repo
-- [ ] Review the repo and publish
+- [ ] Finish README file
 - [ ] Add repo into paper
+- [ ] Review the repo and publish
 
 ## Getting Started
 
