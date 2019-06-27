@@ -39,11 +39,12 @@ This repository is tested under the following system settings:
 - [x] Add a docker file
 - [x] Push the repo to Github
 - [x] Add repo into paper
-- [ ] Prepare google drive for trained models
-- [ ] Add sample images
-- [ ] Test this repo from scratch
+- [x] Prepare google drive for trained models
+- [x] Add sample images
 - [ ] Finish README file
+- [ ] Test this repo from scratch
 - [ ] Review the repo and publish
+- [ ] Add this repo to homepage
 
 ## Install
 
@@ -76,7 +77,7 @@ For Docker users, we provide a pre-built docker image as well as a Dockerfile.
 docker pull liaohaofu/adn
 ```
 
-- [Optional] If you want a customized version of ADN docker, you may modify the docker file at `docker/Dockerfile` and then build a docker image.
+- **[Optional]** If you want a customized version of ADN docker, you may modify the docker file at `docker/Dockerfile` and then build a docker image.
 
 ```cmd
 cd docker/
@@ -103,7 +104,7 @@ Two publicly available datasets (DeepLesion and Spineweb) are supported.
 ln -s path_to_DeepLesion/Images_png data/deep_lesion/raw
 ```
 
-- Prepare DeepLesion dataset for ADN (**MATLAB required**). The configuration file for preparing DeepLesion dataset is can be found at `config/dataset.yaml`.
+- Prepare DeepLesion dataset for ADN (**MATLAB required**). The configuration file for preparing DeepLesion dataset can be found at `config/dataset.yaml`.
 
 ```matlab
 >> prepare_deep_lesion
@@ -120,7 +121,7 @@ mkdir data/spineweb
 ln -s path_to_Spineweb/ data/spineweb/raw
 ```
 
-- Prepare Spineweb dataset for ADN. The configuration file for preparing Spineweb dataset is can be found at `config/dataset.yaml`.
+- Prepare Spineweb dataset for ADN. The configuration file for preparing Spineweb dataset can be found at `config/dataset.yaml`.
 
 ```cmd
 python prepare_spineweb.py
@@ -135,8 +136,8 @@ python demo.py deep_lesion
 python demo.py spineweb
 ```
 
-- [Optional] By default, the demo code will download pretrained models from goole drive automatically. If the downloading fails, you may download them from google drive manually.
-  - Download pretrained models for [DeepLesion](https://drive.google.com/open?id=1NqZtEDGMNemy5mWyzTU-6vIAVIk_Ht-N) and [Spineweb]()
+- **[Optional]** By default, the demo code will download pretrained models from goole drive automatically. If the downloading fails, you may download them from google drive manually.
+  - Download pretrained models for [DeepLesion](https://drive.google.com/open?id=1NqZtEDGMNemy5mWyzTU-6vIAVIk_Ht-N) and [Spineweb](https://drive.google.com/open?id=10TpfN2ncKoYo2Qv_cEix0EdvBrtWoo3i)
   - Move the downloaded models to `runs/`
 
   ```cmd
@@ -164,6 +165,6 @@ python test.py deep_lesion
 python test.py spineweb
 ```
 
-## Acknowledgements
+## Acknowledgement
 
 The authors would like to thank Dr. Yanbo Zhang (yanbozhang007@gmail.com) and Dr. Hengyong Yu (hengyong_yu@uml.edu) for providing the artifact synthesis code used in this repository.

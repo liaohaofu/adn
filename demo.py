@@ -16,7 +16,7 @@ from google_drive_downloader import GoogleDriveDownloader as gdd
 CHECKPOINTS = {
     "spineweb":(
         "runs/spineweb/spineweb_29.pt",
-        "1CUG1kjMZ2QLUFgxnJaW3DgqLK1srQ94v"),
+        "10TpfN2ncKoYo2Qv_cEix0EdvBrtWoo3i"),
     "deep_lesion": (
         "runs/deep_lesion/deep_lesion_49.pt",
         "1NqZtEDGMNemy5mWyzTU-6vIAVIk_Ht-N")}
@@ -105,11 +105,10 @@ def plot_image(output_file, img_low, pred_high, img_high, pred_low):
 
     for i in range(2):
         for j in range(2):
-            axes[i][j].imshow(images[i][j], vmin=0.0, vmax=1.0)
+            axes[i][j].imshow(images[i][j], vmin=0.0, vmax=1.0, cmap="gray")
             axes[i][j].axis('off')
             axes[i][j].set_title(titles[i][j])
 
-    fig.tight_layout()
     fig.savefig(output_file, frameon=False, bbox_inches='tight')
     plt.close("all")
 
@@ -149,11 +148,14 @@ if __name__ == "__main__":
         path.join(args.sample_dir, args.model_type, "with_art"), "file")
     high_files = read_dir(
         path.join(args.sample_dir, args.model_type, "without_art"), "file")
-    image_files = zip(low_files, high_files)
+    image_files = list(zip(low_files, high_files))
 
-    for i, (low_file, high_file) in tqdm(enumerate(image_files), total=len(low_files)):
+    for low_file, high_file in tqdm(image_files):
         img_low = load_image(low_file, args.model_type)
         img_high = load_image(high_file, args.model_type)
+
+        low_name = path.basename(low_file)[:-4]
+        high_name = path.basename(high_file)[:-4]
 
         # Artifact reduction and artifact transfer
         with torch.no_grad():
@@ -165,11 +167,11 @@ if __name__ == "__main__":
         to_npy = lambda *xs: [x.detach().cpu().numpy()[0, 0] * 0.5 + 0.5 for x in xs]
         images = to_npy(*images)
 
-        output_dir = path.join(args.results_dir, args.model_type, str(i))
+        output_dir = path.join(args.results_dir, args.model_type, f"{low_name}_{high_name}")
         if not path.isdir(output_dir): os.makedirs(output_dir)
 
         # Plot and save the results
-        plot_file = path.join(args.results_dir, args.model_type, f"{i}.png")
+        plot_file = path.join(args.results_dir, args.model_type, f"{low_name}_{high_name}.png")
         plot_image(plot_file, *images)
 
         low_name = path.basename(low_file)[:-4]
