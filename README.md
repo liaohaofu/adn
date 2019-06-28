@@ -2,6 +2,8 @@
 
 By [Haofu Liao](http://www.liaohaofu.com) (liaohaofu@gmail.com), Spring, 2019
 
+![Overview](overview.png)
+
 ## Citation
 
 If you use this code for your research, please cite our paper.
@@ -115,8 +117,8 @@ python demo.py deep_lesion
 python demo.py spineweb
 ```
 
-- **[Optional]** By default, the demo code will download pretrained models from goole drive automatically. If the downloading fails, you may download them from google drive manually.
-  - Download pretrained models for [DeepLesion](https://drive.google.com/open?id=1NqZtEDGMNemy5mWyzTU-6vIAVIk_Ht-N) and [Spineweb](https://drive.google.com/open?id=10TpfN2ncKoYo2Qv_cEix0EdvBrtWoo3i).
+- **[Optional]** By default, the demo code will download pretrained models from google drive automatically. If the downloading fails, you may download them from google drive manually.
+  - Download pretrained models for [DeepLesion](https://drive.google.com/open?id=1NqZtEDGMNemy5mWyzTU-6vIAVIk_Ht-N) and [Spineweb](https://drive.google.com/open?id=1eF-6YTJYlVa7fVMk8n9yQssAqzrhLO1T).
   - Move the downloaded models to `runs/`.
 
   ```cmd

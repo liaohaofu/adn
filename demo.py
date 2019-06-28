@@ -15,8 +15,8 @@ from google_drive_downloader import GoogleDriveDownloader as gdd
 # Path and google drive ID of pretrained models
 CHECKPOINTS = {
     "spineweb":(
-        "runs/spineweb/spineweb_29.pt",
-        "10TpfN2ncKoYo2Qv_cEix0EdvBrtWoo3i"),
+        "runs/spineweb/spineweb_39.pt",
+        "1eF-6YTJYlVa7fVMk8n9yQssAqzrhLO1T"),
     "deep_lesion": (
         "runs/deep_lesion/deep_lesion_49.pt",
         "1NqZtEDGMNemy5mWyzTU-6vIAVIk_Ht-N")}
@@ -181,7 +181,7 @@ if __name__ == "__main__":
             f"low_{low_name}_origin.npy",
             f"low_{low_name}_artifact_reduced.npy",
             f"high_{high_name}_origin.npy",
-            f"high_{high_name}_artifact_transfered.npy")
+            f"high_{high_name}_artifact_transferred.npy")
         for i in range(4):
             output_file = path.join(output_dir, output_names[i])
             np.save(output_file, images[i])
