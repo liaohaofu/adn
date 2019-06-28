@@ -1,4 +1,4 @@
-# [ADN: Artifact Disentanglement Network for Unsupervised Medical Image Enhancement](https://arxiv.org/pdf/1906.01806.pdf)
+# [ADN: Artifact Disentanglement Network for Unsupervised Metal Artifact Reduction](https://arxiv.org/pdf/1906.01806.pdf)
 
 By [Haofu Liao](http://www.liaohaofu.com) (liaohaofu@gmail.com), Spring, 2019
 
