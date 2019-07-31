@@ -1,7 +1,10 @@
+matplotlib>=3.1.1
 PyYAML>=5.1.0
+requests>=2.22.0
 scikit-image>=0.14.1
 scipy>=1.1.0
 SimpleITK>=1.2.0
+tqdm>=4.32.1
 torch>=1.0.0
 torchvision>=0.2.1
 googledrivedownloader>=0.4
