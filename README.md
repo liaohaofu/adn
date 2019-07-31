@@ -78,8 +78,8 @@ Two publicly available datasets (DeepLesion and Spineweb) are supported.
 ### DeepLesion
 
 - Download the [DeepLesion dataset](https://nihcc.app.box.com/v/DeepLesion). We use the first 9 *.zip* files (Images_png_01.zip to Images_png_09.zip) in our experiments. You may use the `batch_download_zips.py` provided by DeepLesion to batch download the *.zip* files at once.
-- Extract the downloaded *.zip* files. The extracted images should be located under `path_to_DeepLesion/Images_png`.
-- Create a softlink to DeepLesion.
+- Extract the downloaded *.zip* files. All the extracted images will be under the folder `path_to_DeepLesion/Images_png/`. Here `path_to_DeepLesion` is the folder path where you extract the *.zip* files.
+- Create a softlink to DeepLesion. **Replace `path_to_DeepLesion/Images_png` to the actual path in your system before running the following command**.
 
 ```cmd
 ln -s path_to_DeepLesion/Images_png data/deep_lesion/raw
@@ -94,8 +94,8 @@ ln -s path_to_DeepLesion/Images_png data/deep_lesion/raw
 ### Spineweb
 
 - Download the [Spineweb dataset](https://imperialcollegelondon.app.box.com/s/erhcm28aablpy1725lt93xh6pk31ply1).
-- Extract the *spine-\*.zip* files. The extracted files should be located under `path_to_Spineweb/spine-*`.
-- Create a softlink to Spineweb.
+- Extract the *spine-\*.zip* files (i.e., `spine-1.zip`, `spine-2.zip`, etc.).  All the extracted images will be under the folder `path_to_Spineweb/spine-*/`. Here `path_to_Spineweb` is the folder path where you extract the *spine-\*.zip* files.
+- Create a softlink to Spineweb. **Replace `path_to_Spineweb/` to the actual path to in your system before running the following command**.
 
 ```cmd
 mkdir data/spineweb
