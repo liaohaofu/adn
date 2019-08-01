@@ -25,7 +25,7 @@ This repository is tested under the following system settings:
 - Python 3.7 (Anaconda/Miniconda reconmmended)
 - Pytorch 1.0.0 or above
 - CUDA 9.0 or above
-- Matlab R2018b (with Image Processing Toolbox and Statistics and Machine Learning Toolbox)
+- Matlab R2018b (with Image Processing Toolbox, Parallel Computing Toolbox and Statistics and Machine Learning Toolbox)
 
 ## Install
 
