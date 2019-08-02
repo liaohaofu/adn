@@ -40,12 +40,13 @@ if __name__ == "__main__":
 
     for patient_dir in tqdm(patient_dirs):
         patient_name = path.basename(patient_dir)
-        volume_files = read_dir(patient_dir, predicate=lambda x: x.endswith("mhd"), recursive=True)
+        volume_files = read_dir(patient_dir,
+            predicate=lambda x: x.endswith("mhd") or x.endswith("nii.gz"), recursive=True)
         for volume_file in volume_files:
             volume_obj = sitk.ReadImage(volume_file)
 
             volume = sitk.GetArrayFromImage(volume_obj)
-            volume_name = path.basename(volume_file)[:-4]
+            volume_name = path.basename(volume_file).split(".")[0]
 
             thumbnails = defaultdict(list)
             index = 0
@@ -127,5 +128,3 @@ if __name__ == "__main__":
 
     shutil.rmtree(artifact_dir)
     shutil.rmtree(no_artifact_dir)
-
-    print("Done!")

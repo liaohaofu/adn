@@ -12,7 +12,7 @@ from ..utils import read_dir
 
 
 class Spineweb(torch.utils.data.Dataset):
-    def __init__(self, a_dir="data/z2ai/clinical", b_dir="data/z2ai/spineweb",
+    def __init__(self, a_dir="data/spineweb/train/artifact", b_dir="data/spineweb/train/no_artifact",
         random_flip=False, a_range=(-1000.0, 2000.0), b_range=(-1000.0, 2000.0)):
         super(Spineweb, self).__init__()
 
