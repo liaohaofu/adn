@@ -62,7 +62,7 @@ for phase=splits
             continue
         end
 
-        fprintf('Processing %s\n', image_name)
+        fprintf('[%s][%d/%d] Processing %s\n', phase{1}, ii, numel(image_indices), image_name)
         raw_image = imread(fullfile(config.raw_dir, image_name));
  
         image = single(raw_image) - 32768;
