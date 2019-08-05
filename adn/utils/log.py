@@ -131,7 +131,7 @@ class Logger(object):
 
             if hasattr(self, 'pair_fcn') and it % self.metrics_freq == 0:
                 pairs, name = self.pair_fcn()
-                for i in range(len(pairs[0][1])):
+                for i in range(len(pairs[0][1][0])):
                     n = len(self.metrics) - ('mean' in self.metrics)
                     for j, pair in pairs:
                         for k, metrics_fcn in self.metrics_fcns:
