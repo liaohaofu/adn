@@ -9,6 +9,7 @@ spineweb:
     a_dir: data/spineweb/test/artifact
     b_dir: data/spineweb/test/no_artifact
     random_flip: False
+    metrics_step: .inf
 deep_lesion:
   train:
     batch_size: 2

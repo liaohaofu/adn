@@ -64,7 +64,7 @@ class ADNTester(Tester):
         self.logger = Logger(self.run_dir, self.epoch, self.run_name)
         self.logger.add_iter_visual_log(self.get_visuals, 1, "test_visuals")
         self.logger.add_metric_log(self.get_pairs,
-            (("ssim", self.get_metric(ssim)), ("psnr", self.get_metric(psnr))))
+            (("ssim", self.get_metric(ssim)), ("psnr", self.get_metric(psnr))), opts.metrics_step)
 
         return self.logger
 
