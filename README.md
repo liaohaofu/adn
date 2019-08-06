@@ -1,4 +1,4 @@
-# [ADN: Artifact Disentanglement Network for Unsupervised Metal Artifact Reduction](https://arxiv.org/pdf/1906.01806.pdf)
+# ADN: Artifact Disentanglement Network for Unsupervised Metal Artifact Reduction [[Paper]](https://arxiv.org/pdf/1908.01104.pdf)
 
 By [Haofu Liao](http://www.liaohaofu.com) (liaohaofu@gmail.com), Spring, 2019
 

@@ -81,9 +81,9 @@ class Logger(object):
 
             desc += loss_str
         if hasattr(self, 'metrics'):
-            res_str = ""
+            res_str = " "
             for k, res in self.metrics['mean'].items():
-                res_str += "{}- ".format(k)
+                res_str += "{}-> ".format(k)
                 for j, m in res.items():
                     res_str += "{}: {:.2e} ".format(j, m)
                 res_str += " "
@@ -129,7 +129,7 @@ class Logger(object):
                         "epoch{}_iter{}_{}.png".format(self.epoch, it, k))
                     Image.fromarray(v).convert('RGB').save(visual_file)
 
-            if hasattr(self, 'pair_fcn') and it % self.metrics_freq == 0:
+            if hasattr(self, 'pair_fcn') and it % self.metrics_freq == self.metrics_freq - 1:
                 pairs, name = self.pair_fcn()
                 for i in range(len(pairs[0][1][0])):
                     n = len(self.metrics) - ('mean' in self.metrics)

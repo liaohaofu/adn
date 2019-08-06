@@ -6,6 +6,7 @@ checkpoints_dir: runs/ # a folder that records all the training and testing resu
 last_epoch: last
 num_epochs: 50
 print_step: 1
+metrics_step: 1
 window_size: 100 # the moving average window size for training and testing stats
 visualize_step: 100 # number of batch iters to visualize ADN's outputs
 save_step: 10 # number of epochs to snapshot the currently trained model
