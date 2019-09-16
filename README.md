@@ -126,7 +126,7 @@ your_dataset
 │   └── no_artifact # a folder containing all the testing images without artifact
 └── train
     ├── artifact # a folder containing all the training images with artifact
-    └── no_artifact # a folder containing all the training images with artifact
+    └── no_artifact # a folder containing all the training images without artifact
 ```
 
 - Create a softlink to your nature image dataset
