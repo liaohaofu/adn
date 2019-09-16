@@ -51,8 +51,8 @@ class Base(nn.Module):
         visuals = make_grid(images, nrow=images.shape[0] // n_rows, normalize=False)
         visuals = to_npy(visuals).transpose(1, 2, 0)
         visuals = (visuals * 255).astype(np.uint8)
-        if wide and visuals.shape[0] > visuals.shape[1]:
-            visuals = visuals.transpose(1, 0, 2)
+        # if wide and visuals.shape[0] > visuals.shape[1]:
+        #     visuals = visuals.transpose(1, 0, 2)
         return visuals
 
     def forward(self, *data): raise NotImplementedError

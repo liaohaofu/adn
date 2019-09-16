@@ -105,6 +105,9 @@ def read_dir(dir_path, predicate=None, name_only=False, recursive=False):
         else:
             ext = predicate
             predicate = lambda x: ext in path.splitext(x)[-1]
+    elif type(predicate) is list:
+        exts = predicate
+        predicate = lambda x: path.splitext(x)[-1][1:] in exts
 
     def read_dir_(output, dir_path, predicate, name_only, recursive):
         if not path.isdir(dir_path): return

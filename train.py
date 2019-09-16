@@ -37,6 +37,10 @@ if __name__ == "__main__":
             else: return data['lq_image'], data['hq_image']
         elif dataset_type == "spineweb":
             return data['a'], data['b']
+        elif dataset_type == "nature_image":
+            return data["artifact"], data["no_artifact"]
+        else:
+            raise ValueError("Invalid dataset type!")
 
     dataset_opts = opts['dataset']
     train_dataset = get_dataset(**dataset_opts)

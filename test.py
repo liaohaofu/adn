@@ -19,6 +19,8 @@ class ADNTester(Tester):
                 return data['lq_image'], data['hq_image'], data["data_name"]
         elif dataset_type == "spineweb":
             return data['a'], data['b'], data["data_name"]
+        elif dataset_type == "nature_image":
+            return data['artifact'], data['no_artifact'], data["data_name"]
 
     def get_metric(self, metric):
         def measure(x, y):
