@@ -15,6 +15,13 @@ If you use this code for your research, please cite our paper.
   booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
   year={2019}
 }
+@article{adn2019_tmi, 
+  author={H. {Liao} and W. {Lin} and S. K. {Zhou} and J. {Luo}}, 
+  journal={IEEE Transactions on Medical Imaging}, 
+  title={ADN: Artifact Disentanglement Network for Unsupervised Metal Artifact Reduction}, 
+  year={2019},
+  doi={10.1109/TMI.2019.2933425}
+}
 ```
 
 ## Prerequisites
@@ -152,7 +159,7 @@ python demo.py spineweb
   - The default settings of ADN can be found at `config/adn.yaml` which is not subject to be changed. When users do not provide the values for a specific setting, the default setting in this file will be used.
   - The run settings can be found at `runs/adn.yaml`. This is where the users provide specific settings for ADN's training and testing. Any provided settings in this file will override the default settings during the experiments. **By default, the settings for training and testing ADN with DeepLesion and Spineweb datasets are provided in** `runs/adn.yaml`.
 
-- Train ADN with DeepLesion, Spineweb datasets or a nature image dataset. The training results (model checkpoints, configs, losses, training visualizations, etc.) can be found under `runs/run_name/` where `run_name` can be either `deep_lesion`, `spineweb`, `nature_image`
+- Train ADN with DeepLesion, Spineweb datasets or a nature image dataset. The training results (model checkpoints, configs, losses, training visualizations, etc.) can be found under `runs/run_name/` where `run_name` can be either `deep_lesion`, `spineweb` or `nature_image`
 
 ```cmd
 python train.py deep_lesion
