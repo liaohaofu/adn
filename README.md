@@ -122,7 +122,7 @@ your_dataset
     └── no_artifact # a folder containing all the training images with artifact
 ```
 
-- Create a softlinks to your nature image dataset
+- Create a softlink to your nature image dataset
 
 ```cmd
 ln -s path_to_your_dataset data/nature_image
