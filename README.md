@@ -135,7 +135,7 @@ your_dataset
 ln -s path_to_your_dataset data/nature_image
 ```
 
-- **Note that our model is not tuned for nature images and its effectiveness may vary depending on the problem and datasets.**
+- **Note that our model is not tuned for nature images (e.g., choices of loss functions, hyperparameters, etc.) and its effectiveness may vary depending on the problem and datasets.**
 
 ## Demo
 
