@@ -135,9 +135,11 @@ your_dataset
 ln -s path_to_your_dataset data/nature_image
 ```
 
+- **Note that our model is not tuned for nature images and its effectiveness may vary depending on the problem and datasets.**
+
 ## Demo
 
-- We provide a demo code to demonstrate the effectiveness of ADN. The input samples images are located at `samples/` and the outputs of the demo can be found at `results/`. To run the demo,
+- We provide a demo code to demonstrate the effectiveness of ADN. The input sample images are located at `samples/` and the outputs of the demo can be found at `results/`. To run the demo,
 
 ```cmd
 python demo.py deep_lesion
@@ -157,7 +159,7 @@ python demo.py spineweb
 
 - Configure the training and testing. We use a two-stage configuration for ADN, one for the default settings and the other for the run settings.
   - The default settings of ADN can be found at `config/adn.yaml` which is not subject to be changed. When users do not provide the values for a specific setting, the default setting in this file will be used.
-  - The run settings can be found at `runs/adn.yaml`. This is where the users provide specific settings for ADN's training and testing. Any provided settings in this file will override the default settings during the experiments. **By default, the settings for training and testing ADN with DeepLesion and Spineweb datasets are provided in** `runs/adn.yaml`.
+  - The run settings can be found at `runs/adn.yaml`. This is where the users provide specific settings for ADN's training and testing. Any provided settings in this file will override the default settings during the experiments. **By default, the settings for training and testing ADN with DeepLesion, Spineweb and nature image datasets are provided in** `runs/adn.yaml`.
 
 - Train ADN with DeepLesion, Spineweb datasets or a nature image dataset. The training results (model checkpoints, configs, losses, training visualizations, etc.) can be found under `runs/run_name/` where `run_name` can be either `deep_lesion`, `spineweb` or `nature_image`
 
