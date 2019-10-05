@@ -80,7 +80,7 @@ docker run -it --runtime=nvidia liaohaofu/adn
 
 ## Datasets
 
-Two publicly available datasets (DeepLesion and Spineweb) are supported. As a courtesy, we also support training/testing with nature images.
+Two publicly available datasets (DeepLesion and Spineweb) are supported. As a courtesy, we also support training/testing with natural images.
 
 ### DeepLesion
 
@@ -115,9 +115,9 @@ ln -s path_to_Spineweb/ data/spineweb/raw
 python prepare_spineweb.py
 ```
 
-### Nature image
+### Natural image
 
-- Our code assumes you have prepared your nature image dataset as following.
+- Our code assumes you have prepared your natural image dataset as following.
 
 ```cmd
 your_dataset
@@ -129,13 +129,13 @@ your_dataset
     └── no_artifact # a folder containing all the training images without artifact
 ```
 
-- Create a softlink to your nature image dataset
+- Create a softlink to your natural image dataset
 
 ```cmd
 ln -s path_to_your_dataset data/nature_image
 ```
 
-- **Note that our model is not tuned for nature images (e.g., choices of loss functions, hyperparameters, etc.) and its effectiveness may vary depending on the problems and datasets.**
+- **Note that our model is not tuned for natural images (e.g., choices of loss functions, hyperparameters, etc.) and its effectiveness may vary depending on the problems and datasets.**
 
 ## Demo
 
@@ -159,9 +159,9 @@ python demo.py spineweb
 
 - Configure the training and testing. We use a two-stage configuration for ADN, one for the default settings and the other for the run settings.
   - The default settings of ADN can be found at `config/adn.yaml` which is not subject to be changed. When users do not provide the values for a specific setting, the default setting in this file will be used.
-  - The run settings can be found at `runs/adn.yaml`. This is where the users provide specific settings for ADN's training and testing. Any provided settings in this file will override the default settings during the experiments. **By default, the settings for training and testing ADN with DeepLesion, Spineweb and nature image datasets are provided in** `runs/adn.yaml`.
+  - The run settings can be found at `runs/adn.yaml`. This is where the users provide specific settings for ADN's training and testing. Any provided settings in this file will override the default settings during the experiments. **By default, the settings for training and testing ADN with DeepLesion, Spineweb and natural image datasets are provided in** `runs/adn.yaml`.
 
-- Train ADN with DeepLesion, Spineweb datasets or a nature image dataset. The training results (model checkpoints, configs, losses, training visualizations, etc.) can be found under `runs/run_name/` where `run_name` can be either `deep_lesion`, `spineweb` or `nature_image`
+- Train ADN with DeepLesion, Spineweb datasets or a natural image dataset. The training results (model checkpoints, configs, losses, training visualizations, etc.) can be found under `runs/run_name/` where `run_name` can be either `deep_lesion`, `spineweb` or `nature_image`
 
 ```cmd
 python train.py deep_lesion
@@ -169,7 +169,7 @@ python train.py spineweb
 python train.py nature_image
 ```
 
-- Test ADN with DeepLesion, Spineweb datasets or a nature image dataset. The testing results (evaluation metrics and testing visualizations, etc.) can be found under `runs/run_name/` where `run_name` can be either `deep_lesion`, `spineweb` or `nature_image`.
+- Test ADN with DeepLesion, Spineweb datasets or a natural image dataset. The testing results (evaluation metrics and testing visualizations, etc.) can be found under `runs/run_name/` where `run_name` can be either `deep_lesion`, `spineweb` or `nature_image`.
 
 ```cmd
 python test.py deep_lesion
