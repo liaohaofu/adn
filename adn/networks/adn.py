@@ -93,8 +93,8 @@ class Decoder(nn.Module):
 
 class ADN(nn.Module):
     """
-    Image without artifact is denoted as low quality image
-    Image with artifact is denoted as high quality image
+    Image with artifact is denoted as low quality image
+    Image without artifact is denoted as high quality image
     """
 
     def __init__(self, input_ch=1, base_ch=64, num_down=2, num_residual=4, num_sides="all",
