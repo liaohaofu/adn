@@ -147,12 +147,12 @@ python demo.py spineweb
 ```
 
 - **[Optional]** By default, the demo code will download pretrained models from google drive automatically. If the downloading fails, you may download them from google drive manually.
-  - Download pretrained models for [DeepLesion](https://drive.google.com/open?id=1NqZtEDGMNemy5mWyzTU-6vIAVIk_Ht-N) and [Spineweb](https://drive.google.com/open?id=1eF-6YTJYlVa7fVMk8n9yQssAqzrhLO1T).
+  - Download pretrained models from Google Drive ([DeepLesion](https://drive.google.com/open?id=1NqZtEDGMNemy5mWyzTU-6vIAVIk_Ht-N) | [Spineweb](https://drive.google.com/open?id=1eF-6YTJYlVa7fVMk8n9yQssAqzrhLO1T)) or [Bitbucket](https://bitbucket.org/liaohaofu/adn_modesl).
   - Move the downloaded models to `runs/`.
 
   ```cmd
   mv path_to_DeepLesion_model runs/deep_lesion/deep_lesion_49.pt
-  mv path_to_Spineweb_model runs/spineweb/spineweb_29.pt
+  mv path_to_Spineweb_model runs/spineweb/spineweb_39.pt
   ```
 
 ## Train and Test
